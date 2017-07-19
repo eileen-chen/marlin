@@ -1,7 +1,9 @@
 Django==1.11.3
 django-environ==0.4.3
 django-extensions==1.8.1
+olefile==0.44
+Pillow==4.2.1
 psycopg2==2.7.1
 pytz==2017.2
 six==1.10.0
-git+https://eileen2233kimo@bitbucket.org/agleansoft/sydney-tenant-schemas.git
+sydney-tenant-schemas===2f0e3a

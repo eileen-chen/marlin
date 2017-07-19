@@ -16,25 +16,37 @@ Follow the initialization steps：
 | Parameter | Description | Example | Required | Remark |
 | --------- | ----------- | ------- | -------- | -------|
 | schema_name | schema name | as66kbsa | Required | Condition: [a-z0-9], Auto generated |
-| serial_number | protocol serial number | I5Q-MC-CGAH | optional | |
-| phase | Protocol Phase | III | optional | |
+| title |  Protocol Title | 評估以LY2951742治療陣發性偏頭痛病患的一項第3期、隨機分配、雙盲、安慰劑對照試驗－ EVOLVE-2試驗 | Required | |
 | display_name | Protocol Display Name | 評估以LY2951742治療陣發性偏頭痛病患的一項第3期 | optional | |
 | purpose | Research purpose | 檢驗假說：用於陣發性偏頭痛病患時，至少1種劑量之LY2951742 (120或240 mg/month)預防偏頭痛的效果優於安慰劑。 | Required | |
-| name |  Protocol Name| 評估以LY2951742治療陣發性偏頭痛病患的一項第3期、隨機分配、雙盲、安慰劑對照試驗－ EVOLVE-2試驗 | Required | |
-| start_date | Start Date | 2017-07-18T08:57:40.845352 | optional | ISO 8601 format |
-| end_date | End Date | 2018-07-18T08:57:40.845352 | optional | ISO 8601 format |
 | indications | Indications | 陣發性偏頭痛 | Required | |
-| category | category | Single Center or Multicenter | Required | |
-| approval_serial_number | examine number | I5AR9877 | optional | |
+| icd | ICD 10 | M27.3 | Required | |
+| type | 0: PI Initiate, 1: hospital, 2: sponsor | 1 | Required | |
+| site | if type is hospital, please full this field | 台北榮總 | Required | |
+| sponsor | if type is sponsor, please full this field | 
+| apply_number | protocol apply number | I5Q-MC-ACHY | optional | |
+| approval_number | Approval Number | I5AR9877 | optional | |
 | approval_date | Approval Date | 2017-07-18T08:44:11.175369 | optional | ISO 8601 format |
-| user_id | protocol owner |  | Required | [A-Za-z0-9] | Required | |
+| serial_number | protocol serial number | I5Q-MC-CGAH | optional | |
+| phase | Protocol Phase | III | optional | |
+| estimate_period_start | Estimate Period start | 2017-07-18T08:57:40.845352 | optional | ISO 8601 format |
+| estimate_period_end | Estimate Period end | 2018-07-18T08:57:40.845352 | optional | ISO 8601 format |
+| center_type | category | Single Center or Multicenter | Required | |
+| principal_investigator |  principal investigator |  | Required | Required | |
+| protocol_manager | protocol owner |  | Required | Required | |
 
 ### Request / Response
 
 ```bash
 # Request
-curl -H "Authorization: CRrppi1DELemyXr83szSnahV" \
-https://app.sydney.com/api/v1/protocols \
+curl -H "Content-Type: application/json" \
+-X POST -d '{
+    "title": "評估以LY2951742治療陣發性偏頭痛病患的一項第3期、隨機分配、雙盲、安慰劑對照試驗－ EVOLVE-2試驗",
+    "display_name": "評估以LY2951742治療陣發性偏頭痛病患的一項第3期",
+    "purpose": "檢驗假說：用於陣發性偏頭痛病患時，至少1種劑量之LY2951742 (120或240 mg/month)預防偏頭痛的效果優於安慰劑。",
+    
+
+}' https://app.sydney.com/protocols 
 -d "owner=as66kbsa" \
 -d "name=評估以LY2951742治療陣發性偏頭痛病患的一項第3期、隨機分配、雙盲、安慰劑對照試驗－ EVOLVE-2試驗"\
 -d "approval_date=2016/02/01" \
