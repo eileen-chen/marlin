@@ -6,4 +6,4 @@ Pillow==4.2.1
 psycopg2==2.7.1
 pytz==2017.2
 six==1.10.0
-sydney-tenant-schemas===2f0e3a
+git+ssh://git@bitbucket.org/agleansoft/sydney-tenant-schemas.git
