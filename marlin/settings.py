@@ -35,30 +35,33 @@ ALLOWED_HOSTS = ['*']
 SHARED_APPS = (
     'tenant_schemas',  # mandatory
     'protocols', # you must list the app where your tenant model resides in
-    'users',
+    #'users',
     'django_extensions',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
     'django.contrib.staticfiles',
 )
 
 # The same applies for TENANT_APPS, it expects a tuple of strings where each string is an app.
 TENANT_APPS = (
     'django.contrib.contenttypes',
-    'protocol_users',
+    #'protocol_users',
 )
 
 INSTALLED_APPS = (
     'tenant_schemas',  # mandatory, should always be before any django app
     'protocols',
-    'users',
+    #'users',
     'django_extensions',
-    'django.contrib.staticfiles',
+    'django.contrib.admin',
+    'django.contrib.auth',
     'django.contrib.contenttypes',
-    # 'django.contrib.auth',
-    # 'django.contrib.sessions',
-    # 'django.contrib.sites',
-    # 'django.contrib.messages',
-    # 'django.contrib.admin',
-    'protocol_users',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
 )
 
 

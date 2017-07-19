@@ -4,12 +4,12 @@ from django.utils import timezone
 #Create your models here.
 class ProtocolUser(models.Model):
 
-    first_name = models.CharField(max_length=30)
-    middle_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    avatar = models.ImageField()
-    identity_number = models.CharField(max_length=30, db_index=True)
-    identity_country = models.CharField(max_length=30)
+    first_name = models.CharField(max_length=30, verbose_name='First Name')
+    middle_name = models.CharField(max_length=30, verbose_name='Middle Name')
+    last_name = models.CharField(max_length=30, verbose_name='Last Name')
+    avatar = models.ImageField(verbose_name='Avatar')
+    identity_number = models.CharField(max_length=30, db_index=True, verbose_name='Identity Number')
+    identity_country = models.CharField(max_length=30, verbose_name='Country')
 
     objects = models.Manager()
 
@@ -27,11 +27,11 @@ class Demography(models.Model):
         ('2', 'Unknow'),
     )
 
-    birthday = models.DateField(null=True, blank=True)
-    gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
-    height = models.FloatField(null=True, blank=True)
-    weight = models.FloatField(null=True, blank=True)
-    city = models.CharField(max_length=30, null=True, blank=True)
+    birthday = models.DateField(null=True, blank=True, verbose_name='Birthday')
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES, verbose_name='Gender')
+    height = models.FloatField(null=True, blank=True, verbose_name='Height')
+    weight = models.FloatField(null=True, blank=True, verbose_name='weight')
+    city = models.CharField(max_length=30, null=True, blank=True, verbose_name='City')
     country = models.CharField(max_length=30, null=True, blank=True)
     state_code = models.CharField(max_length=10, null=True, blank=True)
     postal_code = models.CharField(max_length=10, null=True, blank=True)

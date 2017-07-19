@@ -20,6 +20,7 @@ from django.conf.urls import url, include
 
 urlpatterns = [
     url(r'^account/', include('account.urls')),
+    url(r'^api/v1/', include('account.urls')),
     #url(r'^index/$', index),
     #url(r'^admin/', admin.site.urls),
     #url(r'^signup$', include('sigup.urls')),
